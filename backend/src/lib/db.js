@@ -7,7 +7,7 @@ export async function connectDB() {
   if (forceDns) {
     const servers = forceDns.split(',');
     dns.setServers(servers);
-    console.log(`🔧 Forzando servidores DNS: ${servers.join(', ')}`);
+    console.log(`🔧 Forcing DNS servers: ${servers.join(', ')}`);
   }
 
   try {
