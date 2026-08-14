@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import { connectDB } from "./lib/db.js";
 import { clerkMiddleware } from "@clerk/express";
+import job from "./lib/cron.js";
 
 import "dotenv/config"
 
@@ -37,7 +38,9 @@ if (fs.existsSync(publicDir)) {
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`))
+    app.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));
+
+    if (process.env.NODE_ENV === "production") job.start();      
   } catch (error) {
     console.error(`App couldn't be initialized: ${error.message}`);
     process.exit(1);
