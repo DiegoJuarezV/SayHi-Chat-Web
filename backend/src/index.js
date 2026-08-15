@@ -5,6 +5,7 @@ import path from "path";
 import { connectDB } from "./lib/db.js";
 import { clerkMiddleware } from "@clerk/express";
 import job from "./lib/cron.js";
+import clerkWebhook from "./webhooks/clerk.webhook.js"
 
 import "dotenv/config"
 
@@ -14,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const publicDir = path.join(process.cwd(), "public");
+
+// is's important don't parse the webhook event data, keep it raw format
+app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
 
 app.use(cors());
 app.use(express.json({ origin: FRONTEND_URL, credentials: true }));
