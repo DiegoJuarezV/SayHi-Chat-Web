@@ -8,10 +8,9 @@ import job from "./lib/cron.js";
 import clerkWebhook from "./webhooks/clerk.webhook.js"
 import authRoutes from "./routers/auth.route.js"
 import messageRoutes from "./routers/message.route.js"
+import { server, app } from "./lib/socket.js";
 
 import "dotenv/config"
-
-const app = express();
 
 const PORT = process.env.PORT || 3000;
 const FRONTEND_URL = process.env.FRONTEND_URL;
@@ -47,7 +46,7 @@ if (fs.existsSync(publicDir)) {
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));
+    server.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));
 
     if (process.env.NODE_ENV === "production") job.start();      
   } catch (error) {
