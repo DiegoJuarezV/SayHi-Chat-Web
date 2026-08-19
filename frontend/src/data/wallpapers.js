@@ -93,5 +93,5 @@ export function frameStyleFromUrl(url) {
 }
 
 export function getWallpaperById(id) {
-  return WALLPAPERS.find((w) => w.id === id) ?? WALLPAPERS[0];
+  return WALLPAPERS.find((w) => w.id === id) ?? WALLPAPERS[9];
 }
