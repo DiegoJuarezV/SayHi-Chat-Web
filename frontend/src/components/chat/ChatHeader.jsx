@@ -6,10 +6,10 @@ import { AvatarWithOnlineIndicator } from "./AvatarWithOnlineIndicator";
 import ThemePresetPicker from "../ThemePresetPicker";
 
 import ThemeToggle from "../ThemeToggle";
-import WallpaperPicker from "../WallPaperPicker";
 
 import { useChatStore } from "../../store/useChatStore";
 import { useSelectedConversation } from "../../hooks/useSelectedConversation";
+import WallpaperPicker from "../WallPaperPicker";
 
 export function ChatHeader() {
   const isSoundEnabled = useChatStore((state) => state.isSoundEnabled);
