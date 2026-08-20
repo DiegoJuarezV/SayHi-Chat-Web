@@ -43,7 +43,7 @@ const WallpaperThumb = ({ wallpaper, selected, onSelect }) => {
   );
 }
 
-const WallpaperPicker = () => {
+export function WallpaperPicker() {
   const modal = useOverlayState();
   const { wallpaperId, setWallpaperId } = useWallpaper();
   const [, startTransition] = useTransition();
@@ -96,5 +96,3 @@ const WallpaperPicker = () => {
     </Modal.Root>
   );
 }
-
-export default WallpaperPicker;

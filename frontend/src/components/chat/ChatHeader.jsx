@@ -9,7 +9,7 @@ import ThemeToggle from "../ThemeToggle";
 
 import { useChatStore } from "../../store/useChatStore";
 import { useSelectedConversation } from "../../hooks/useSelectedConversation";
-import WallpaperPicker from "../WallPaperPicker";
+import { WallpaperPicker } from "../WallpaperPicker"
 
 export function ChatHeader() {
   const isSoundEnabled = useChatStore((state) => state.isSoundEnabled);
