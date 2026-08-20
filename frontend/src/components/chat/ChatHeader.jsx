@@ -6,7 +6,7 @@ import { AvatarWithOnlineIndicator } from "./AvatarWithOnlineIndicator";
 import ThemePresetPicker from "../ThemePresetPicker";
 
 import ThemeToggle from "../ThemeToggle";
-import WallpaperPicker from "../WallpaperPicker";
+import WallpaperPicker from "../WallPaperPicker";
 
 import { useChatStore } from "../../store/useChatStore";
 import { useSelectedConversation } from "../../hooks/useSelectedConversation";
