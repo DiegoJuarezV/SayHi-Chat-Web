@@ -1,7 +1,7 @@
 import { APP_NAME, AppLogo } from "../AppLogo"
 import ThemePresetPicker from "../ThemePresetPicker"
 import ThemeToggle from "../ThemeToggle"
-import WallPaperPicker from "../WallPaperPicker"
+import WallPaperPicker from "../WallpaperPicker"
 
 const AuthHeader = () => {
   return (
